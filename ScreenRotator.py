@@ -81,13 +81,13 @@ def build_menu():
     item_rotate.connect('activate', rotate_screen)
     menu.append(item_rotate)
     #flip
-    item_flip = Gtk.MenuItem('Flip Vertical')
-    item_flip.connect('activate', flip_screen)
-    menu.append(item_flip)
-    #rotate right
-    item_rotate_right = Gtk.MenuItem('Rotate Right')
-    item_rotate_right.connect('activate', rotate_screen_right)
-    menu.append(item_rotate_right)
+    # item_flip = Gtk.MenuItem('Flip Vertical')
+    # item_flip.connect('activate', flip_screen)
+    # menu.append(item_flip)
+    # #rotate right
+    # item_rotate_right = Gtk.MenuItem('Rotate Right')
+    # item_rotate_right.connect('activate', rotate_screen_right)
+    # menu.append(item_rotate_right)
     #seperator
     seperator = Gtk.SeparatorMenuItem()
     menu.append(seperator)
@@ -178,6 +178,7 @@ def rotate_screen(source):
         call(["xsetwacom", "set", pen_id, "rotate","ccw"])
     if finger_id.isdigit():
         call(["xsetwacom", "set", finger_id, "rotate","ccw"])
+    os.system("rotate_touch.sh left")
 
 def rotate_screen_right(source):
     #~ call(["xrandr", "-o", "right"])
@@ -186,6 +187,7 @@ def rotate_screen_right(source):
         call(["xsetwacom", "set", pen_id, "rotate","cw"])
     if finger_id.isdigit():
         call(["xsetwacom", "set", finger_id, "rotate","cw"])
+    os.system("rotate_touch.sh right")
     
 def flip_screen(source):
     #~ call(["xrandr", "-o", "inverted"])
