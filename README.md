@@ -20,3 +20,6 @@ Switches of Trackpoint or TouchScreen will not appear if your laptop do not have
 
 The icon is from Google's Material Desing icon pack (https://materialdesignicons.com/)
 
+
+# Updates by rishav
+- Add this folder in your path for touch rotation to work
