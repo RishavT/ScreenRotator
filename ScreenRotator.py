@@ -14,6 +14,7 @@
 # 2020.05.22: update xrandr command for Mint Linux 19.3
 
 import signal
+import os
 from subprocess import call, check_output
 import gi
 gi.require_version('Gtk', '3.0')
@@ -170,6 +171,7 @@ def reset_screen(source):
         call(["xsetwacom", "set", pen_id, "rotate","none"])
     if finger_id.isdigit():
         call(["xsetwacom", "set", finger_id, "rotate","none"])
+    os.system("/home/rishav/Documents/ScreenRotator/rotate_touch.sh")
     
 def rotate_screen(source):
     #~ call(["xrandr", "-o", "left"])
@@ -178,7 +180,7 @@ def rotate_screen(source):
         call(["xsetwacom", "set", pen_id, "rotate","ccw"])
     if finger_id.isdigit():
         call(["xsetwacom", "set", finger_id, "rotate","ccw"])
-    os.system("rotate_touch.sh left")
+    os.system("/home/rishav/Documents/ScreenRotator/rotate_touch.sh left")
 
 def rotate_screen_right(source):
     #~ call(["xrandr", "-o", "right"])
@@ -187,7 +189,6 @@ def rotate_screen_right(source):
         call(["xsetwacom", "set", pen_id, "rotate","cw"])
     if finger_id.isdigit():
         call(["xsetwacom", "set", finger_id, "rotate","cw"])
-    os.system("rotate_touch.sh right")
     
 def flip_screen(source):
     #~ call(["xrandr", "-o", "inverted"])

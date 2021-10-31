@@ -3,7 +3,7 @@
 matrix="1 0 0 0 1 0 0 0 1"
 if [[ "$1" == "left" ]]
 then
-	matrix="0 1 0 -1 0 1 0 0 1"
+	matrix="0 -1 1 1 0 0 0 0 1"
 fi
 xinput set-prop 'Wacom HID 52A2 Finger' 'Coordinate Transformation Matrix' $matrix
 # xinput disable 'SynPS/2 Synaptics TouchPad'
